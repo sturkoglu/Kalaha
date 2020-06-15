@@ -1,0 +1,10 @@
+<mat-grid-list *ngFor="let tileRow of board.tiles" cols="8" rowHeight="100px" layout-align="center center">
+  <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]= "'brown'">
+    <h3>{{board.players[0].stack}}</h3>
+  </mat-grid-tile>
+    <mat-grid-tile *ngFor="let tile of tileRow" [colspan]="1" [rowspan]="1" [style.background]= "'brown'" (click)="onTileClicked(tile)">
+      <h3>{{tile.pieceCount}}</h3>
+    </mat-grid-tile>
+  <mat-grid-tile [colspan]="1" [rowspan]="1"[style.background]= "'brown'">
+    <h3>{{board.players[1].stack}}</h3> </mat-grid-tile>
+</mat-grid-list>
